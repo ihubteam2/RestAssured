@@ -1,17 +1,15 @@
 public class Human{
 
 
-    public static void speak(String s){
+    public static void speak(){
 
         System.out.println("i can speak");
 
     }
-
-    public static void speak(String s, String w){
-
-        System.out.println("i can speak");
-
+    public static void read(){
+        System.out.println("i can read");
     }
+
 
     public static void write(){
 
