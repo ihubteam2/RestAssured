@@ -227,7 +227,40 @@ if i want to bind my data and operate through methods is called Encapusulation
 
 
 
+git clone https://github.com/ihubteam2/RestAssured.git
 
+git status --> list of files which you made changes
+
+git add --all // it will add all the files
+
+git add <fileName> it will add only respective file
+
+git add . this will add all the files including .gitignore
+
+git add .*  this will add all the files irrespective of the file extension
+
+git commit -m "Any meaningfull message"
+
+git push -u origin master
+
+git push
+
+
+git checkout -b <branchName>
+
+git status --> list of files which you made changes
+
+git add --all // it will add all the files
+
+git add <fileName> it will add only respective file
+
+git add . this will add all the files including .gitignore
+
+git add .*  this will add all the files irrespective of the file extension
+
+git commit -m "Any meaningfull message"
+
+git push // this push changes will be
 
 
 

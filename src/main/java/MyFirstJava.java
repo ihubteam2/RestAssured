@@ -1,11 +1,9 @@
-class MyFirstJava { //starting point
+import java.util.Arrays;
+import java.util.Comparator;
 
+public class MyFirstJava {
 
-    public static void main(String[] args){
-
-      ChildC.read();
-
-    }
-;
 
 }
+
+
