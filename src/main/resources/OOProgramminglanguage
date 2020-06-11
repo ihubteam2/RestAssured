@@ -263,147 +263,156 @@ git commit -m "Any meaningfull message"
 git push // this push changes will be
 
 
+loops
+operators
+arrays
+lists
 
+Abstarction:
 
+1. Interfaces
+2. Abstarct Classes
 
 
 
+Class Hello(){
 
 
+	Swift swift = new swift();
 
 
 
+}
 
+Class Car(){
 
+	public void streeing(){
 
+	}
 
+	public void wheels(){
 
+	}
 
+}
 
 
 
+interfcae i (){
 
 
+	public void car();
 
+	pubic void swift();
 
+}
 
 
 
+abstract Class Honda() extends Car{
 
+	public void streeing(){
 
+	}
 
+	public abstarct void wheels(){
 
+	}
 
+	public abstarct void gear(){
 
+	}
 
+	public abstarct void seats(){
 
+	}
 
+}
 
 
+Class Swift() extends Honda(){
 
+	public void streeing(){
 
+	}
 
+	public void wheels(){
 
 
+}
 
 
 
+try {
+   Assert.assertEquals(expectedValue, actualValue);
+      }
+catch(Exception e) {
+    System.out.println("Value is invalid");
+  }
 
 
 
+String str = "{ \"name\": \"Alice\", \"age\": 20 }";
+JSONObject obj = new JSONObject(str);
+String n = obj.getString("name");
+int a = obj.getInt("age");
+System.out.println(n + " " + a);
 
 
+Rest Assured
 
+It is a library file  and will be added as one od dependencies to our project.
+Rest Assured to i used to test API and Web service testing [ PUT, POST,GET,PATCH, DELETE..]
+Integrated to anykind of build projects [ MAVEN, GRADLE]
+Integrated to any kind of Testing framework [JUNIT, TESTNG]
+Rest Assured is developed using Groovy language
+Rest Assured uses BDD gherkin key words like given,when and then
+You can validate any kind of API content Format (JSON,XML,HTML)
+Rest Assured i language agnostic.
 
 
+Pre-Requesites:
 
+JAVA installation
+IDE: Eclipse, intellij or net beans or visualStudioCode or Atom
+Maven -- mvn
+TestNG
+RestAssured library
 
 
+SOAP-- Simple Object Access Protocal-- instrcutions
 
+REST-- Architecture-- JSON,XML, HTMl
 
+JSON-JAVA Script object Notation
 
+SAAS --> SOftware as a service
 
 
+Framework:
 
 
+    BDD Cucumber
+--------------------
+|Rest-Assured JAVA |
+--------------------
 
 
+FRAMEWORK --> Java lnaguage and tool used:
 
+combination of Reporting+helper+utils+F
 
 
 
+Design of a framework:
+----------------------
 
+Define Scope of testing.
+Need to define an Automation Tool [Open Source/ Commercial Tool]
 
+Regression, Integration and E2E
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Helper files [ Helper+Utils]
+Functional Methods
+Reporting
+Logging
