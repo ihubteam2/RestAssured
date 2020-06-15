@@ -416,3 +416,68 @@ Helper files [ Helper+Utils]
 Functional Methods
 Reporting
 Logging
+
+
+Testing POST METHOD:
+
+we need send a body content to this method.
+there are multiple ways to send a body content.
+
+1. sending it as a string
+2. sending it as a hash string
+3. sending it through an excel
+4. sending it through a json file
+5. building pojo objects and sending it
+
+
+
+How to send a Json Body as a string?
+
+1.Body is in jSON Format:
+
+            {
+                "name": "morpheus",
+                "job": "leader"
+            }
+
+2. Convert this body into a String object
+
+        String testBody = "{\n" +
+                "\"name\": \"morpheus\",\n" +
+                "\"job\": \"leader\"\n" +
+                "}";
+
+3. Send this string Object as a body parameter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

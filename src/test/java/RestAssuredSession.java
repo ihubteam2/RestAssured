@@ -19,9 +19,23 @@ public class RestAssuredSession {
 
     }
 
-    @Test
-    public void testPostMethod(){
 
+    @Test
+    public void testPostMethod() {
+
+        String testBody = "{\n" +
+                "\"name\": \"morpheus\",\n" +
+                "\"job\": \"leader\"\n" +
+                "}";
+
+        given().contentType("application/json")
+                .when()
+                .body(testBody)
+                .post("https://reqres.in/api/users")
+                .then()
+                .statusCode(201);
     }
+
+
 
 }
