@@ -64,7 +64,7 @@ public class RestAssuredSession {
     public void testPostMethodUsingJsonFile() throws Exception {
 
         File dataFile = new File("src/main/resources/data.json");
-        given().contentType(ContentType.JSON)
+      given().contentType(ContentType.JSON)
                 .when()
                 .body(dataFile)
                 .post("https://reqres.in/api/users")
@@ -73,5 +73,20 @@ public class RestAssuredSession {
                 .log();
 
     }
+
+    @Test
+    public void testPostMethodUsingPojoObject(){
+
+        User user = new User("morpheus","leader" );
+        given().contentType(ContentType.JSON)
+                .when()
+                .body(user)
+                .post(Constants.baseURI+Constants.basePath+Constants.endPoint)
+                .then()
+                .statusCode(201)
+                .log().all();
+    }
+
+
 
 }

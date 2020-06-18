@@ -472,6 +472,33 @@ How to send a post body using Json File
 3. And use it in the post request body.
 
 
+How to send a post body using POJO object.
+
+1. Create a pojo file
+2. Define attributes
+3. Call the class instance into the post methods
+4. pass the instance value into the post request body
+
+
+Ecommerce: Price, markDownPrice, %offPrice, $offPrice, regularPrice
+
+
+URL = URI+basePath+endpoint+<pathParams>+QueryParams
+
+https://reqres.in/api/users
+
+baseURI = "https://reqres.in"
+basePath = /api
+Endpoint = /users
+
+1. configuration properties(.properties,.yml)
+2. Constants class and get the values
+
+
+XLS-- HSSFWorkbook method
+XLSX - XSSFWorkbook method
+
+
 
 
 
