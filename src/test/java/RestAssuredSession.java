@@ -1,7 +1,10 @@
+import com.fasterxml.jackson.databind.JsonNode;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.json.JSONObject;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -87,6 +90,44 @@ public class RestAssuredSession {
                 .log().all();
     }
 
+    @Test(dataProvider="xlData")
+    public void testPostMethodUsingExcelSheetData(String name, String job) throws Exception {
 
+        JSONObject testxlData = new JSONObject();
+        testxlData.put("name",name);
+        testxlData.put("job",job);
+
+        given().contentType(ContentType.JSON)
+                .when()
+                .body(testxlData)
+                .post(Constants.baseURI+Constants.basePath+Constants.endPoint)
+                .then()
+                .statusCode(201)
+                .log().all();
+
+    }
+
+    @DataProvider(name="xlData")
+    public Object[][] getxlData(){
+        String excelPath = "./src/main/resources/userData.xlsx";
+        Object data[][]= excelData(excelPath,"testData");
+        return data;
+    }
+
+
+    public Object[][] excelData(String excelPath,String sheetName){
+        ExcelUtils xlutils = new ExcelUtils(excelPath, sheetName);
+        int rowCount = xlutils.getRowCount();
+        int columnCount = xlutils.getColumnCount();
+
+        Object[][] data = new Object[rowCount][columnCount];
+        for(int i=1; i<rowCount; i++){
+            for(int j=0; j<columnCount; j++){
+                String cellData = xlutils.getCellData(i,j);
+                data[i-1][j]= cellData;
+            }
+        }
+        return data;
+    }
 
 }
