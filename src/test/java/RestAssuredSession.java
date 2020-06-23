@@ -1,18 +1,16 @@
-import com.fasterxml.jackson.databind.JsonNode;
-import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 import org.json.JSONObject;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
-import static io.restassured.RestAssured.given;
-import static io.restassured.matcher.RestAssuredMatchers.*;
 import static org.hamcrest.Matchers.*;
 
 public class RestAssuredSession {
@@ -90,6 +88,23 @@ public class RestAssuredSession {
                 .log().all();
     }
 
+    @Test
+    public void testPostMethodURLbuildingConfigurations() throws IOException {
+
+        Properties configProperties = new Properties();
+        FileInputStream configFile = new FileInputStream("./src/main/resources/Configuration.properties");
+        configProperties.load(configFile);
+
+        User user = new User("morpheus","leader" );
+        given().contentType(ContentType.JSON)
+                .when()
+                .body(user)
+                .post(configProperties.getProperty("baseURI")+configProperties.getProperty("basePath")+configProperties.getProperty("endPoint"))
+                .then()
+                .statusCode(201)
+                .log().all();
+    }
+
     @Test(dataProvider="xlData")
     public void testPostMethodUsingExcelSheetData(String name, String job) throws Exception {
 
@@ -108,14 +123,14 @@ public class RestAssuredSession {
     }
 
     @DataProvider(name="xlData")
-    public Object[][] getxlData(){
+    public Object[][] getxlData() throws IOException {
         String excelPath = "./src/main/resources/userData.xlsx";
         Object data[][]= excelData(excelPath,"testData");
         return data;
     }
 
 
-    public Object[][] excelData(String excelPath,String sheetName){
+    public Object[][] excelData(String excelPath,String sheetName) throws IOException {
         ExcelUtils xlutils = new ExcelUtils(excelPath, sheetName);
         int rowCount = xlutils.getRowCount();
         int columnCount = xlutils.getColumnCount();
@@ -128,6 +143,50 @@ public class RestAssuredSession {
             }
         }
         return data;
+    }
+
+    @Test
+    public void testPUTmethod(){
+
+        Map<String, String> putBody = new HashMap<String, String>();
+        putBody.put("name","morpheus");
+        putBody.put("job","Tutor");
+
+        given().contentType(ContentType.JSON)
+                .when()
+                .body(putBody)
+                .put("https://reqres.in/api/users/2")
+                .then()
+                .statusCode(200)
+                .log().all();
+
+    }
+
+    @Test
+    public void testPATCHmethod(){
+
+        Map<String, String> putBody = new HashMap<String, String>();
+        putBody.put("name","RESTAOI");
+        putBody.put("job","WELCOME");
+
+        given().contentType(ContentType.JSON)
+                .when()
+                .body(putBody)
+                .put("https://reqres.in/api/users/2")
+                .then()
+                .statusCode(200)
+                .log().all();
+
+    }
+
+    @Test
+    public void testDELETEmethod(){
+        given().contentType(ContentType.JSON)
+                .when()
+                .delete("https://reqres.in/api/users/2")
+                .then()
+                .statusCode(204)
+                .log().all();
     }
 
 }

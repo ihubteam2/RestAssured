@@ -9,7 +9,7 @@ public class ExcelUtils {
     static XSSFWorkbook workBook;
     static XSSFSheet workSheet;
 
-    public ExcelUtils(String excelPath, String sheetName) {
+    public ExcelUtils(String excelPath, String sheetName)throws IOException {
         try {
             workBook = new XSSFWorkbook(excelPath);
             workSheet = workBook.getSheet(sheetName);

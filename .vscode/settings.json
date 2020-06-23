@@ -1,0 +1,6 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.preferredHighContrastColorTheme": "Visual Studio Dark",
+    "workbench.fontAliasing": "antialiased",
+    "java.home": "/Library/Java/JavaVirtualMachines/jdk-11.0.5.jdk/Contents/Home"
+}

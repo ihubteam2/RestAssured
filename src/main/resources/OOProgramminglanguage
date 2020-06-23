@@ -499,7 +499,67 @@ XLS-- HSSFWorkbook method
 XLSX - XSSFWorkbook method
 
 
+PUT: method is used to update a Single value of the data.
+PATCH : method is used to update a batch number of values of the data.
+But most of the time in implementation we use PUT method to update data.
 
+
+DELETE:
+
+Design a Framework:
+
+1. Test Plan:
+
+    1. it is derived from the BRS document of a project( Specific to the project)
+    2. It also defines the complete testing activities ( tools and Technologies) that are used in the project.
+
+    ROI -- Return on investment
+
+2. Test Strategy
+    1. The Strategy is a high level document how testing is done. This will be for a complete Organization.
+3. Test Design
+    1. Test Pyramid ( 100% automation is possible)
+
+    70% of your test cases would be done by unit test cases.
+    20% is from your integration test cases
+    Payment validation-- Amazon shopping
+    10% is from your e2e test cases.
+
+4. Test Implementation
+    1. Tools
+    2. Framework aspect
+
+Pre-requisites:
+
+1. JAVA (jdk installed)
+2. IDE(intellij/eclipse/VSC/etc...)
+3. Maven
+4. Cucumber
+5. TestNG
+6. RestAssured
+
+
+--src --main
+        --java
+            -- Helper Folder [ Defining POST PUT DELETE and PATCH generic Methods]
+            -- Utils Folder[ Third party integration libraries for Reporting, logging and data drives libraries]
+            -- Implementation classes
+
+        --resources
+            --datafiles
+      --test
+        --java
+            -- Helper Folder [ Defining POST PUT DELETE and PATCH generic Methods]
+            -- Utils Folder[ Third party integration libraries for Reporting, logging and data drives libraries]
+            -- Implementation classes
+
+        --resources
+            --datafiles
+
+
+
+1. Customized framework
+2. Hybrid framework
 
 
 
