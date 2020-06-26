@@ -17,16 +17,13 @@ public class RestAssuredSession {
 
     @Test
     public void testGetMethod(){
-
          given().contentType("application/json")
         .when()
                 .get("https://reqres.in/api/users?page=2")
                 .then()
                 .statusCode(200)
                  .body("data.email[0]",equalTo("michael.lawson@reqres.in"));
-
     }
-
 
     @Test
     public void testPostMethod() {

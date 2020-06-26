@@ -563,6 +563,18 @@ Pre-requisites:
 
 
 
+Manual Test cases
+
+1. Open url "xyz.com"
+2. enter "abc@def.com" in the username field
+3.
+4
+5. verify wether the user has logged in or not.
+
+Given  i navigate to the loginPage
+When i enter vlaid userName and Password
+Then i should see successful login
+
 
 
 
